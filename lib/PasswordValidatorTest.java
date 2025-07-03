@@ -13,7 +13,7 @@ public class PasswordValidatorTest{
         } else {
             System.out.println("Test Case 1 : "+pw+" :FAILED : Expected INVALID but got " + result1);
         }
-        // Test Case 2: รหัสผ่านเป็นตัวเลขควรจะ WEAK
+        // Test Case 2: รหัสผ่านเป็นตัวเลขทั้งหมด ควรจะ WEAK
         pw = "12345678" ;
         PasswordStrength result2 = PasswordValidator.validate(pw);
         if (result2 == PasswordStrength.WEAK) {

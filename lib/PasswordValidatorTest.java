@@ -13,8 +13,8 @@ public class PasswordValidatorTest{
         } else {
             System.out.println("Test Case 1 : "+pw+" :FAILED : Expected INVALID but got " + result1);
         }
-        // Test Case 2: รหัสผ่านเป็นตัวเลขซ้ำควรจะ WEAK
-        pw = "111111111" ;
+        // Test Case 2: รหัสผ่านเป็นตัวเลขควรจะ WEAK
+        pw = "12345678" ;
         PasswordStrength result2 = PasswordValidator.validate(pw);
         if (result2 == PasswordStrength.WEAK) {
             System.out.println("Test Case 2 :"+pw+" : Passed : Short password is WEAK.");
@@ -32,7 +32,7 @@ public class PasswordValidatorTest{
             System.out.println("Test Case 3 : "+pw+" :FAILED : Expected MEDIUM but got " + result3);
         }
 
-        // Test Case 4: รหัสผ่านมีตัวใหญ่ ตัวเล็ก ตัวเลข และตัวอักขระ  ควรจะ STRONG
+        // Test Case 4: รหัสผ่านมีตัวใหญ่ ตัวเล็ก ตัวเลข และตัวอักขระพิเศษ  ควรจะ STRONG
         pw = "Pang2548." ;
         PasswordStrength result4 = PasswordValidator.validate(pw);
         if (result4 == PasswordStrength.STRONG) {
